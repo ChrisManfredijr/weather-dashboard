@@ -16,7 +16,7 @@ $("#searchForm").on("click", ".prevCity", function(event) {
 });
 //gets the longitude and latitute on start
 var geoGet = function(cityName){
-    var geoAPI = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid=" + key;
+    var geoAPI = "https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid=" + key;
     fetch(geoAPI).then(function(response){ 
     if (response.ok) {
         response.json().then(function(data) {
@@ -107,7 +107,7 @@ var weatherPopulate = function(data) {
    
     let cityInfo = {
         city:(data.name),
-        icon: "http://openweathermap.org/img/wn/" + (data.weather[0].icon) + "@2x.png",
+        icon: "https://openweathermap.org/img/wn/" + (data.weather[0].icon) + "@2x.png",
         temp:(data.main.temp + "°F"),
         wind:(data.wind.speed + " mph"),
         humid:(data.main.humidity + "%"),
@@ -143,7 +143,7 @@ var weatherPopulateFive = function(data) {
 
         var dayReport = {
             date:newDate[0],
-            icon:"http://openweathermap.org/img/wn/" + (data.list[index * 8].weather[0].icon)  + "@2x.png",
+            icon:"https://openweathermap.org/img/wn/" + (data.list[index * 8].weather[0].icon)  + "@2x.png",
             temp:data.list[index * 8].main.temp + "°F",
             wind:data.list[index * 8].wind.speed  + " mph",
             humid:data.list[index * 8].main.humidity  + "%",
