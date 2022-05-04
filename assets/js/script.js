@@ -68,16 +68,19 @@ var cityLog = function(cityName, lat, lon) {
 
 var localStorageButtons = function(){
     var tempStorage = JSON.parse(localStorage.getItem('cities'));
-    for(var i = 0; i < tempStorage.length; i++){
-        
-        var cityButton = $((document.createElement('input')));
-        var city = tempStorage[i].city;
-        cityButton.attr("type", "submit");
-        cityButton.attr("value", city); 
-        cityButton.addClass("prevCity w-100 m-1");
-        $("#searchField").append(cityButton);
-       
-        
+    if(tempStorage !== null){
+        for(var i = 0; i < tempStorage.length; i++){
+            
+            var cityButton = $((document.createElement('input')));
+            var city = tempStorage[i].city;
+            cityButton.attr("type", "submit");
+            cityButton.attr("value", city); 
+            cityButton.addClass("prevCity w-100 m-1");
+            $("#searchField").append(cityButton);
+           
+            
+        }
+
     }
 }
 
@@ -92,7 +95,7 @@ var weatherReport = function(lat, lon) {
     fetch(weatherAPI).then(function(response){ 
         if (response.ok) {
             response.json().then(function(data) {
-            weatherPopulate(data, lat, lon);
+            weatherPopulate(data);
           });
         } else {
           document.location.replace("./index.html");
