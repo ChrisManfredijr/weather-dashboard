@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Document</title>
+</head>
+<body class = "margin-0">
+    <header>
+        <h1 class = 'bg-primary text-light text-center font-weight-bold display-2'>Weather Dashboard</h1>
+    </header>
+    <main class = "container" id = "searchForm">
+        <div class = "row ">
+            <form class = "col-3 border-bottom border-secondary">
+                <label class = "mb-4 row"><h3>Search for a City:</h3></label>
+                <input type = "text" id="citySearch" name="city" class = "mb-3 row w-100 rounded">
+                <input type = "submit" value = "Search" class = "searchCity mb-4 bg-primary text-light font-weight-bold rounded w-100 row" id="searchCity">
+            </form>
+        </div>
+    </main>
+    
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
