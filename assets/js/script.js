@@ -24,7 +24,7 @@ var geoGet = function(cityName){
         var lon = data[0].lon;
         weatherReport(lat, lon);
         fiveDayReport(lat, lon);
-        cityLog(cityName);
+        cityLog(cityName, lat, lon);
       });
     } else {
       document.location.replace("./index.html");
@@ -62,15 +62,15 @@ var cityLog = function(cityName, lat, lon) {
             cityButton.addClass("prevCity w-100 m-1");
             $("#searchField").append(cityButton);
         }
-        
+        console.log("test-fire");
     }
 }
 
 var localStorageButtons = function(){
     var tempStorage = JSON.parse(localStorage.getItem('cities'));
     if(tempStorage !== null){
+        
         for(var i = 0; i < tempStorage.length; i++){
-            
             var cityButton = $((document.createElement('input')));
             var city = tempStorage[i].city;
             cityButton.attr("type", "submit");
