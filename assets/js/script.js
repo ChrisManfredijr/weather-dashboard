@@ -1,5 +1,5 @@
 var key = "8b316af2cd911d56c695445d7a5a016a";
-var cityName;
+
 
 
 $("#searchForm").on("click", "#searchCity", function(event) {
