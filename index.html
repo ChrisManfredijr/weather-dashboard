@@ -12,15 +12,68 @@
     <header>
         <h1 class = 'bg-primary text-light text-center font-weight-bold display-2'>Weather Dashboard</h1>
     </header>
-    <main class = "container" id = "searchForm">
-        <div class = "row ">
-            <form class = "col-3 border-bottom border-secondary">
+  
+    <section class = "container-fluid" id = "searchForm">
+        <div class = "row">
+            <form class = "col-2" style = "margin:10px;">
                 <label class = "mb-4 row"><h3>Search for a City:</h3></label>
                 <input type = "text" id="citySearch" name="city" class = "mb-3 row w-100 rounded">
                 <input type = "submit" value = "Search" class = "searchCity mb-4 bg-primary text-light font-weight-bold rounded w-100 row" id="searchCity">
+                <div class = "border-bottom border-secondary w-100"></div>
             </form>
+            <article class = "col-9" style="margin-top:15px;">
+                <section class = "today mb-4 border border-secondary" style = "padding-left:15px">
+                    <h3 id = "city">City: </h3>
+                    <img id = "icon"></img>
+                    <h4 id = "temp">Temp: </h4>
+                    <h4 id = "wind">Wind: </h4>
+                    <h4 id = "humid">Humidity: </h4>
+                </section>
+                <section class = "row d-flex">
+                    <h3>5-Day Forecast: </h3>
+                </section>
+                <section class = "row d-flex" id = "fiveDay">
+                    <div class = "card text-light bg-primary" style = "width: 175px; padding-left:15px; margin-right:10px">
+                        <h4 class = "name">Date:</h4>
+                        <img class = "icon"></img>
+                        <p class = "temp">Temp:</p>
+                        <p class = "wind">wind:</p>
+                        <p class = "humid">Humidity:</p>
+                    </div>
+                    <div class = "card text-light bg-primary"style = "width: 175px; padding-left:15px; margin-right:10px">
+                        <h4 class = "name">Date:</h4>
+                        <img class = "icon"></img>
+                        <p class = "temp">Temp:</p>
+                        <p class = "wind">wind:</p>
+                        <p class = "humid">Humidity:</p>
+                    </div>
+                    <div class = "card text-light bg-primary"style = "width: 175px; padding-left:15px; margin-right:10px">
+                        <h4 class = "name">Date:</h4>
+                        <img class = "icon"></img>
+                        <p class = "temp">Temp:</p>
+                        <p class = "wind">wind:</p>
+                        <p class = "humid">Humidity:</p>
+                    </div>
+                    <div class = "card text-light bg-primary"style = "width: 175px; padding-left:15px; margin-right:10px">
+                        <h4 class = "name">Date:</h4>
+                        <img class = "icon"></img>
+                        <p class = "temp">Temp:</p>
+                        <p class = "wind">wind:</p>
+                        <p class = "humid">Humidity:</p>
+                    </div>
+                    <div class = "card text-light bg-primary"style = "width: 175px; padding-left:15px; margin-right:10px">
+                        <h4 class = "name">Date:</h4>
+                        <img class = "icon"></img>
+                        <p class = "temp">Temp:</p>
+                        <p class = "wind">wind:</p>
+                        <p class = "humid">Humidity:</p>
+                    </div>
+                </section>
+            </article>
         </div>
-    </main>
+        
+    </section>
+
     
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
