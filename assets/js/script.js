@@ -48,17 +48,27 @@ geoGet("New York");
 
 
 var cityLog = function(cityName, lat, lon) {
-    if(localStorage.getItem("cities") === null){
-        localStorage.setItem("cities", "[]")
-    }
+   
     var cityLogged = {
         city: cityName,
         lat: lat,
         lon: lon,
     }
-    
+    if(localStorage.getItem("cities") === null){
+        localStorage.setItem("cities", "[]");
+        tempStorage.push(cityLogged);
+        localStorage.setItem("cities", JSON.stringify(tempStorage));
+            var city = cityLogged.city;
+            var cityButton = $((document.createElement('input')));
+            cityButton.attr("type", "submit");
+            cityButton.attr("value", city); 
+            cityButton.addClass("prevCity w-100 m-1");
+            $("#searchField").append(cityButton);
+
+    }
     var tempStorage = JSON.parse(localStorage.getItem('cities'));
     console.log("1");
+
     for(let i = 0; i < tempStorage.length; i++){
         if(tempStorage[i].lat === cityLogged.lat && tempStorage[i].lon === cityLogged.lon){
             console.log("2");
