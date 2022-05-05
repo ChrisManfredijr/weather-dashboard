@@ -54,10 +54,12 @@ var cityLog = function(cityName, lat, lon) {
         lat: lat,
         lon: lon,
     }
-    if(localStorage.getItem("cities") === null){
+    if(localStorage.getItem("cities") === null || localStorage.getItem('cities') === "[]"){
+        var tempStorage = JSON.parse(localStorage.getItem('cities'));
+        console.log("test");
         localStorage.setItem("cities", "[]");
         tempStorage.push(cityLogged);
-        localStorage.setItem("cities", JSON.stringify(tempStorage));
+            localStorage.setItem("cities", JSON.stringify(tempStorage));
             var city = cityLogged.city;
             var cityButton = $((document.createElement('input')));
             cityButton.attr("type", "submit");
@@ -67,7 +69,7 @@ var cityLog = function(cityName, lat, lon) {
 
     }
     var tempStorage = JSON.parse(localStorage.getItem('cities'));
-    console.log("1");
+ 
 
     for(let i = 0; i < tempStorage.length; i++){
         if(tempStorage[i].lat === cityLogged.lat && tempStorage[i].lon === cityLogged.lon){
@@ -95,6 +97,7 @@ var localStorageButtons = function(){
     if(tempStorage !== null){
         
         for(var i = 0; i < tempStorage.length; i++){
+            
             var cityButton = $((document.createElement('input')));
             var city = tempStorage[i].city;
             cityButton.attr("type", "submit");
@@ -144,7 +147,7 @@ var weatherPopulate = function(data, uvi) {
     $("#humid").text("Humidity: " + cityInfo.humid);
     $("#uv").text("UV index: " + cityInfo.uv);
 
-    console.log(cityInfo.uv);
+    
     if(cityInfo.uv < 3.0){
         $("#uv").text("UV index: " + cityInfo.uv);
         $("#uv").addClass("bg-success w-25");
