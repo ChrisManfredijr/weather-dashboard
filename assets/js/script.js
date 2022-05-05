@@ -58,12 +58,15 @@ var cityLog = function(cityName, lat, lon) {
     }
     
     var tempStorage = JSON.parse(localStorage.getItem('cities'));
-  
+    console.log("1");
     for(let i = 0; i < tempStorage.length; i++){
         if(tempStorage[i].lat === cityLogged.lat && tempStorage[i].lon === cityLogged.lon){
+            console.log("2");
             break;
             
+            
         }else if(i === tempStorage.length - 1){
+            console.log("3");
             tempStorage.push(cityLogged);
             localStorage.setItem("cities", JSON.stringify(tempStorage));
             var city = cityLogged.city;
